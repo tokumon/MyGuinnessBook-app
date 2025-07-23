@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私のギネスブック - 統計・グラフ</title>
+    <meta name="description" content="記録データを統計グラフで可視化します">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-link">← 戻る</a>
+                <h1 class="page-title">統計・グラフ</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <div class="container">
+            <!-- 統計サマリー -->
+            <section class="stats-summary-section">
+                <h2 class="section-title">統計サマリー</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">総記録数</h3>
+                            <p class="stat-value" id="totalRecords">0</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">記録日数</h3>
+                            <p class="stat-value" id="recordDays">0日</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">最多記録項目</h3>
+                            <p class="stat-value" id="topCategory">-</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-content">
+                            <h3 class="stat-title">平均記録数</h3>
+                            <p class="stat-value" id="averageRecords">0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- グラフ表示 -->
+            <section class="charts-section">
+                <h2 class="section-title">グラフ表示</h2>
+                
+                <!-- グラフコントロール -->
+                <div class="chart-controls">
+                    <div class="chart-filter-group">
+                        <select id="chartType" class="chart-select">
+                            <option value="bar">棒グラフ</option>
+                            <option value="line">折れ線グラフ</option>
+                            <option value="pie">円グラフ</option>
+                        </select>
+                        
+                        <select id="chartCategory" class="chart-select">
+                            <option value="">すべての項目</option>
+                            <option value="あくびの回数">あくびの回数</option>
+                            <option value="猫と目が合った回数">猫と目が合った回数</option>
+                            <option value="冷蔵庫を開けた回数">冷蔵庫を開けた回数</option>
+                            <option value="しゃっくりの回数">しゃっくりの回数</option>
+                            <option value="ジャンプした数">ジャンプした数</option>
+                        </select>
+                        
+                        <select id="chartPeriod" class="chart-select">
+                            <option value="week">今週</option>
+                            <option value="month">今月</option>
+                            <option value="year">今年</option>
+                            <option value="all">全期間</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- グラフエリア -->
+                <div class="chart-container">
+                    <canvas id="mainChart" class="chart-canvas"></canvas>
+                </div>
+                
+                <!-- グラフ説明 -->
+                <div class="chart-description">
+                    <p id="chartDescription">記録データをグラフで可視化しています</p>
+                </div>
+            </section>
+
+            <!-- 詳細統計 -->
+            <section class="detailed-stats-section">
+                <h2 class="section-title">詳細統計</h2>
+                <div class="detailed-stats-grid">
+                    <div class="detailed-stat-card">
+                        <h3 class="detailed-stat-title">期間別統計</h3>
+                        <div id="periodStats" class="detailed-stat-content">
+                            <!-- 期間別統計がここに表示されます -->
+                        </div>
+                    </div>
+                    
+                    <div class="detailed-stat-card">
+                        <h3 class="detailed-stat-title">項目別統計</h3>
+                        <div id="categoryStats" class="detailed-stat-content">
+                            <!-- 項目別統計がここに表示されます -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 私のギネスブック</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/config/Constants.js"></script>
+    <script src="js/utils/Validation.js"></script>
+    <script src="js/data/DataManager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私のギネスブック - 今日の記録</title>
+    <meta name="description" content="誰にも共感されないけど自分にとっては大事な日々の記録を、自由に統計として可視化できるWebアプリ">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <h1 class="app-title">私のギネスブック</h1>
+            <p class="app-subtitle">今日もくだらない記録ありがとう！</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <div class="container">
+            <!-- 今日の記録入力エリア -->
+            <section class="record-input-section">
+                <h2 class="section-title">今日の記録を入力</h2>
+                <div class="record-form-card">
+                    <form id="recordForm" class="record-form">
+                        <div class="form-group">
+                            <label for="recordCategory" class="form-label">記録項目</label>
+                            <select id="recordCategory" class="form-select" required>
+                                <option value="">記録項目を選択</option>
+                                <option value="あくびの回数">あくびの回数</option>
+                                <option value="猫と目が合った回数">猫と目が合った回数</option>
+                                <option value="冷蔵庫を開けた回数">冷蔵庫を開けた回数</option>
+                                <option value="しゃっくりの回数">しゃっくりの回数</option>
+                                <option value="ジャンプした数">ジャンプした数</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="recordValue" class="form-label">数値</label>
+                            <input type="number" id="recordValue" class="form-input" min="0" step="1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="recordMemo" class="form-label">メモ（任意）</label>
+                            <textarea id="recordMemo" class="form-textarea" rows="3" placeholder="今日の感想や詳細を記録..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">記録を保存</button>
+                            <button type="button" class="btn btn-secondary" id="addCategoryBtn">新しい項目を追加</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- クイックアクセス -->
+            <section class="quick-access-section">
+                <h2 class="section-title">クイックアクセス</h2>
+                <div class="quick-access-grid">
+                    <a href="history.html" class="quick-access-card">
+                        <div class="quick-access-icon">📅</div>
+                        <h3 class="quick-access-title">履歴</h3>
+                        <p class="quick-access-desc">過去の記録を確認</p>
+                    </a>
+                    <a href="stats.html" class="quick-access-card">
+                        <div class="quick-access-icon">📊</div>
+                        <h3 class="quick-access-title">統計</h3>
+                        <p class="quick-access-desc">グラフで可視化</p>
+                    </a>
+                    <a href="settings.html" class="quick-access-card">
+                        <div class="quick-access-icon">⚙️</div>
+                        <h3 class="quick-access-title">設定</h3>
+                        <p class="quick-access-desc">項目の管理</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 今日の記録サマリー -->
+            <section class="today-summary-section">
+                <h2 class="section-title">今日の記録サマリー</h2>
+                <div id="todaySummary" class="summary-card">
+                    <p class="summary-placeholder">まだ記録がありません</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 私のギネスブック</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/config/Constants.js"></script>
+    <script src="js/utils/Validation.js"></script>
+    <script src="js/data/DataManager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

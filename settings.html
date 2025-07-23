@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私のギネスブック - 設定</title>
+    <meta name="description" content="記録項目の管理とアプリ設定を行います">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-link">← 戻る</a>
+                <h1 class="page-title">設定</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <div class="container">
+            <!-- 記録項目管理 -->
+            <section class="categories-section">
+                <h2 class="section-title">記録項目管理</h2>
+                <div class="categories-card">
+                    <div class="categories-header">
+                        <h3 class="subsection-title">記録項目一覧</h3>
+                        <button type="button" class="btn btn-primary" id="addCategoryBtn">新しい項目を追加</button>
+                    </div>
+                    
+                    <div id="categoriesList" class="categories-list">
+                        <!-- 記録項目がここに動的に追加されます -->
+                        <div class="category-item">
+                            <div class="category-info">
+                                <span class="category-name">あくびの回数</span>
+                                <span class="category-count">5件の記録</span>
+                            </div>
+                            <div class="category-actions">
+                                <button type="button" class="btn btn-small btn-secondary">編集</button>
+                                <button type="button" class="btn btn-small btn-danger">削除</button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-item">
+                            <div class="category-info">
+                                <span class="category-name">猫と目が合った回数</span>
+                                <span class="category-count">3件の記録</span>
+                            </div>
+                            <div class="category-actions">
+                                <button type="button" class="btn btn-small btn-secondary">編集</button>
+                                <button type="button" class="btn btn-small btn-danger">削除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- データ管理 -->
+            <section class="data-management-section">
+                <h2 class="section-title">データ管理</h2>
+                <div class="data-management-grid">
+                    <div class="data-card">
+                        <h3 class="data-card-title">データエクスポート</h3>
+                        <p class="data-card-desc">記録データをJSONファイルとしてダウンロードします</p>
+                        <button type="button" class="btn btn-secondary" id="exportDataBtn">エクスポート</button>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h3 class="data-card-title">データインポート</h3>
+                        <p class="data-card-desc">JSONファイルから記録データを復元します</p>
+                        <input type="file" id="importFile" accept=".json" style="display: none;">
+                        <button type="button" class="btn btn-secondary" id="importDataBtn">インポート</button>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h3 class="data-card-title">データバックアップ</h3>
+                        <p class="data-card-desc">自動バックアップの設定を管理します</p>
+                        <button type="button" class="btn btn-secondary" id="backupSettingsBtn">設定</button>
+                    </div>
+                    
+                    <div class="data-card">
+                        <h3 class="data-card-title">データ削除</h3>
+                        <p class="data-card-desc">すべての記録データを削除します（復元不可）</p>
+                        <button type="button" class="btn btn-danger" id="deleteAllDataBtn">全削除</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- アプリ設定 -->
+            <section class="app-settings-section">
+                <h2 class="section-title">アプリ設定</h2>
+                <div class="settings-card">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3 class="setting-title">テーマカラー</h3>
+                            <p class="setting-desc">アプリのテーマカラーを変更します</p>
+                        </div>
+                        <select id="themeSelect" class="setting-select">
+                            <option value="default">デフォルト</option>
+                            <option value="dark">ダークモード</option>
+                            <option value="retro">レトロ</option>
+                            <option value="minimal">ミニマル</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3 class="setting-title">通知設定</h3>
+                            <p class="setting-desc">記録リマインダーを有効にします</p>
+                        </div>
+                        <label class="setting-toggle">
+                            <input type="checkbox" id="notificationToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3 class="setting-title">自動保存</h3>
+                            <p class="setting-desc">入力中のデータを自動保存します</p>
+                        </div>
+                        <label class="setting-toggle">
+                            <input type="checkbox" id="autoSaveToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- アプリ情報 -->
+            <section class="app-info-section">
+                <h2 class="section-title">アプリ情報</h2>
+                <div class="app-info-card">
+                    <div class="app-info-item">
+                        <span class="info-label">バージョン</span>
+                        <span class="info-value">1.0.0</span>
+                    </div>
+                    <div class="app-info-item">
+                        <span class="info-label">最終更新</span>
+                        <span class="info-value" id="lastUpdate">2024年7月23日</span>
+                    </div>
+                    <div class="app-info-item">
+                        <span class="info-label">データサイズ</span>
+                        <span class="info-value" id="dataSize">0 KB</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 私のギネスブック</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/config/Constants.js"></script>
+    <script src="js/utils/Validation.js"></script>
+    <script src="js/data/DataManager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

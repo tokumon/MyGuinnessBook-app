@@ -1,0 +1,446 @@
+/* ===== レスポンシブデザイン ===== */
+
+/* モバイルファーストアプローチ */
+
+/* ===== ブレークポイント ===== */
+/* 
+  - モバイル: 0px - 767px (デフォルト)
+  - タブレット: 768px - 1023px
+  - デスクトップ: 1024px以上
+*/
+
+/* ===== タブレット (768px以上) ===== */
+@media (min-width: 768px) {
+    /* コンテナの最大幅を調整 */
+    .container {
+        padding: 0 var(--space-lg);
+    }
+    
+    /* ヘッダーの調整 */
+    .app-title {
+        font-size: 3rem;
+    }
+    
+    .app-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* グリッドレイアウトの調整 */
+    .quick-access-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .detailed-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .data-management-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* フォームの調整 */
+    .form-actions {
+        flex-direction: row;
+    }
+    
+    .btn {
+        width: auto;
+    }
+    
+    /* 検索・フィルターの調整 */
+    .filter-group {
+        flex-direction: row;
+    }
+    
+    .chart-filter-group {
+        flex-direction: row;
+    }
+    
+    /* 設定項目の調整 */
+    .setting-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .category-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .category-actions {
+        align-self: auto;
+    }
+}
+
+/* ===== デスクトップ (1024px以上) ===== */
+@media (min-width: 1024px) {
+    /* コンテナの最大幅を拡大 */
+    .container {
+        max-width: 1400px;
+        padding: 0 var(--space-xl);
+    }
+    
+    /* ヘッダーの調整 */
+    .app-title {
+        font-size: 3.5rem;
+    }
+    
+    .app-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    /* メインコンテンツの調整 */
+    .main {
+        padding: var(--space-xxl) 0;
+    }
+    
+    /* グリッドレイアウトの調整 */
+    .quick-access-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xl);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xl);
+    }
+    
+    .detailed-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+    
+    .data-management-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xl);
+    }
+    
+    /* カードの調整 */
+    .record-form-card,
+    .search-filter-card,
+    .categories-card,
+    .data-card,
+    .settings-card,
+    .app-info-card,
+    .summary-card {
+        padding: var(--space-xl);
+    }
+    
+    /* グラフの調整 */
+    .chart-canvas {
+        height: 500px;
+    }
+    
+    /* フォントサイズの調整 */
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .subsection-title {
+        font-size: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 2.5rem;
+    }
+}
+
+/* ===== 大画面デスクトップ (1440px以上) ===== */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .app-title {
+        font-size: 4rem;
+    }
+    
+    .chart-canvas {
+        height: 600px;
+    }
+}
+
+/* ===== モバイル最適化 (480px以下) ===== */
+@media (max-width: 480px) {
+    /* コンテナのパディングを調整 */
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    /* ヘッダーの調整 */
+    .header {
+        padding: var(--space-md) 0;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .app-subtitle {
+        font-size: 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    /* メインコンテンツの調整 */
+    .main {
+        padding: var(--space-lg) 0;
+    }
+    
+    /* カードの調整 */
+    .record-form-card,
+    .search-filter-card,
+    .categories-card,
+    .data-card,
+    .settings-card,
+    .app-info-card,
+    .summary-card {
+        padding: var(--space-md);
+        margin-bottom: var(--space-md);
+    }
+    
+    /* フォームの調整 */
+    .form-group {
+        margin-bottom: var(--space-md);
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 16px; /* iOSでズームを防ぐ */
+    }
+    
+    /* ボタンの調整 */
+    .btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 16px;
+        min-height: 48px; /* タッチターゲットの最小サイズ */
+    }
+    
+    .btn-small {
+        min-height: 40px;
+    }
+    
+    /* グリッドの調整 */
+    .quick-access-grid,
+    .stats-grid,
+    .detailed-stats-grid,
+    .data-management-grid {
+        gap: var(--space-md);
+    }
+    
+    /* アイコンの調整 */
+    .quick-access-icon {
+        font-size: 2.5rem;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+    
+    /* グラフの調整 */
+    .chart-canvas {
+        height: 300px;
+    }
+    
+    /* フォントサイズの調整 */
+    .section-title {
+        font-size: 1.25rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .subsection-title {
+        font-size: 1.1rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    /* スペーシングの調整 */
+    .section-title::before {
+        height: 20px;
+    }
+}
+
+/* ===== 超小画面 (320px以下) ===== */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 var(--space-xs);
+    }
+    
+    .app-title {
+        font-size: 1.75rem;
+    }
+    
+    .record-form-card,
+    .search-filter-card,
+    .categories-card,
+    .data-card,
+    .settings-card,
+    .app-info-card,
+    .summary-card {
+        padding: var(--space-sm);
+    }
+    
+    .btn {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 14px;
+    }
+}
+
+/* ===== 横画面モード (ランドスケープ) ===== */
+@media (orientation: landscape) and (max-height: 600px) {
+    .header {
+        padding: var(--space-sm) 0;
+    }
+    
+    .main {
+        padding: var(--space-md) 0;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .app-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        margin-bottom: var(--space-md);
+    }
+    
+    .record-form-card,
+    .search-filter-card,
+    .categories-card,
+    .data-card,
+    .settings-card,
+    .app-info-card,
+    .summary-card {
+        margin-bottom: var(--space-md);
+    }
+}
+
+/* ===== 高解像度ディスプレイ対応 ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* 高解像度ディスプレイでのシャープな表示 */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* ボーダーの調整 */
+    .form-input,
+    .form-select,
+    .form-textarea,
+    .btn {
+        border-width: 1px;
+    }
+}
+
+/* ===== プリントスタイル ===== */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    .search-filter-section,
+    .chart-controls {
+        display: none;
+    }
+    
+    .main {
+        padding: 0;
+    }
+    
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+    
+    .record-form-card,
+    .search-filter-card,
+    .categories-card,
+    .data-card,
+    .settings-card,
+    .app-info-card,
+    .summary-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        margin-bottom: var(--space-md);
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* ===== アクセシビリティ対応 ===== */
+
+/* フォーカス表示の改善 */
+.btn:focus,
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus,
+.search-input:focus,
+.filter-select:focus,
+.chart-select:focus,
+.setting-select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --accent-color: #000000;
+        --background-color: #ffffff;
+        --white: #ffffff;
+        --light-gray: #f0f0f0;
+        --gray: #000000;
+        --dark-gray: #000000;
+    }
+    
+    .btn-primary {
+        background: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+    
+    .btn-secondary {
+        background: var(--white);
+        border: 2px solid var(--dark-gray);
+        color: var(--dark-gray);
+    }
+}
+
+/* モーション削減対応 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .btn:hover,
+    .quick-access-card:hover,
+    .stat-card:hover,
+    .data-card:hover {
+        transform: none;
+    }
+}
+
+/* ダークモード対応（将来の拡張用） */
+@media (prefers-color-scheme: dark) {
+    /* ダークモードのスタイルは将来実装予定 */
+} 

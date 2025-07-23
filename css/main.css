@@ -1,0 +1,334 @@
+/* ===== リセット・ベーススタイル ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #F7F7F7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== カラーパレット ===== */
+:root {
+    /* プライマリカラー */
+    --primary-color: #FF6B35;
+    --accent-color: #4ECDC4;
+    --background-color: #F7F7F7;
+    
+    /* セカンダリカラー */
+    --success-color: #2ECC71;
+    --warning-color: #F1C40F;
+    --error-color: #E74C3C;
+    --info-color: #95A5A6;
+    
+    /* グレースケール */
+    --white: #FFFFFF;
+    --light-gray: #F8F9FA;
+    --gray: #6C757D;
+    --dark-gray: #343A40;
+    --black: #000000;
+    
+    /* シャドウ */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    
+    /* ボーダー */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    
+    /* スペーシング */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+}
+
+/* ===== タイポグラフィ ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: 2rem; /* 32px */
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5rem; /* 24px */
+}
+
+h3 {
+    font-size: 1.25rem; /* 20px */
+}
+
+p {
+    margin-bottom: var(--space-md);
+    font-size: 1rem; /* 16px */
+}
+
+/* ===== レイアウト ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* ===== ヘッダー ===== */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: var(--space-lg) 0;
+    box-shadow: var(--shadow-md);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.back-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius-sm);
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== メインコンテンツ ===== */
+.main {
+    padding: var(--space-xl) 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* ===== セクション ===== */
+.section-title {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    padding-left: var(--space-md);
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.subsection-title {
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+    margin-bottom: var(--space-md);
+}
+
+/* ===== カード ===== */
+.record-form-card,
+.search-filter-card,
+.categories-card,
+.data-card,
+.settings-card,
+.app-info-card,
+.summary-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-lg);
+    transition: box-shadow 0.3s ease;
+}
+
+.record-form-card:hover,
+.search-filter-card:hover,
+.categories-card:hover,
+.data-card:hover,
+.settings-card:hover,
+.app-info-card:hover,
+.summary-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== フォーム ===== */
+.form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--dark-gray);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: var(--space-md);
+    border: 2px solid #E9ECEF;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--white);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ===== ボタン ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-lg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 44px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #FF8A65);
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--light-gray);
+    color: var(--dark-gray);
+    border: 2px solid #E9ECEF;
+}
+
+.btn-secondary:hover {
+    background: #E9ECEF;
+    border-color: var(--gray);
+}
+
+.btn-danger {
+    background: var(--error-color);
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background: #C0392B;
+}
+
+.btn-small {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.875rem;
+    min-height: 36px;
+}
+
+.form-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+/* ===== フッター ===== */
+.footer {
+    background: var(--dark-gray);
+    color: var(--white);
+    padding: var(--space-lg) 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ===== ユーティリティ ===== */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+} 
